@@ -1,4 +1,6 @@
 # Debian
+install k3s
+enable ssh
 install open-scsi
 
 # Infrastructure
