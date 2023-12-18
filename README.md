@@ -13,6 +13,4 @@ helm install longhorn/longhorn --name longhorn --namespace longhorn-system
 ATTENTION!: Dont delete the Namespace in case you want to delete Longhorn - there is an uninstall script.
 
 # Kubernetes Dashboard
-helm repo add kubernetes-dashboard https://kubernetes.github.io/dashboard/
-
-helm upgrade --install kubernetes-dashboard kubernetes-dashboard/kubernetes-dashboard --create-namespace --namespace kubernetes-dashboard
+siehe ordner
