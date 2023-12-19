@@ -1,0 +1,20 @@
+repositories:
+  - name: pascaliske
+    url: https://github.com/pascaliske/helm-charts
+
+releases:
+  - name: paperless-ngx
+    namespace: "home-services"
+    chart: pascaliske/paperless
+    version: 5.0.0
+    values:
+      - ingress:
+        main:
+          enabled: true
+          annotations:
+              kubernetes.io/ingress.class: traefik
+          hosts:
+          - host: miniryzen   
+            paths:
+              - path: /paperless
+
