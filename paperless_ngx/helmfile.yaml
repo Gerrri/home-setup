@@ -1,11 +1,12 @@
 repositories:
-  - name: pascaliske
-    url: https://charts.pascaliske.dev
+  - name: gabe565
+    url: https://charts.gabe565.com
+
 releases:
   - name: paperless-ngx
     namespace: "home-services"
-    chart: pascaliske/paperless
-    version: 5.0.0
+    chart: gabe565/paperless-ngx
+    version: 0.9.2
     values:
       - ingress:
         main:
@@ -16,4 +17,5 @@ releases:
           - host: miniryzen   
             paths:
               - path: /paperless
+          
 
