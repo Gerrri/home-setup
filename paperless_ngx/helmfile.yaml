@@ -1,7 +1,6 @@
 repositories:
   - name: pascaliske
-    url: https://github.com/pascaliske/helm-charts
-
+    url: https://charts.pascaliske.dev
 releases:
   - name: paperless-ngx
     namespace: "home-services"
