@@ -1,7 +1,7 @@
 releases:
   - name: paperless-ngx
     namespace: "home-services"
-    chart: ../charts/paperless-ngx
+    chart: ../../charts/paperless-ngx
     values:
       - ingress:
           main:
