@@ -17,10 +17,10 @@ Thats my collection of home-services I'm hosting on a mini-pc running a K3s Kube
 - install open-scsi (for Longhorn)
 
 # Cluster Infrastructure
-### Longhorn (https://github.com/longhorn/longhorn/tree/master/chart)
+## Setup [Longhorn](https://github.com/longhorn/longhorn/tree/master/chart)
+```
 helm repo add longhorn https://charts.longhorn.io
 helm repo update
-
 helm install longhorn/longhorn --name longhorn --namespace longhorn-system
-
-ATTENTION!: Dont delete the Namespace in case you want to delete Longhorn - there is an uninstall script.
+```
+ATTENTION!: Dont delete the Namespace in case you want to delete Longhorn -> there is an uninstall script.
