@@ -1,9 +1,11 @@
-# Debian
-install k3s
+Thats my collection of home-services I´m hosting on a mini-pc running K3s Kuber.
+
+# Preparing
+install k3s (one-line-installation)
 enable ssh
 install open-scsi
 
-# Infrastructure
+# Cluster Infrastructure
 ## Longhorn (https://github.com/longhorn/longhorn/tree/master/chart)
 helm repo add longhorn https://charts.longhorn.io
 helm repo update
@@ -11,6 +13,3 @@ helm repo update
 helm install longhorn/longhorn --name longhorn --namespace longhorn-system
 
 ATTENTION!: Dont delete the Namespace in case you want to delete Longhorn - there is an uninstall script.
-
-# Kubernetes Dashboard
-siehe ordner
