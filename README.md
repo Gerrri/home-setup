@@ -1,6 +1,6 @@
-Thats my collection of home-services I´m hosting on a mini-pc running K3s Kuber.
+Thats my collection of home-services I´m hosting on a mini-pc running a K3s Kubernetes Cluster (one Node) 
 
-# Preparing
+# Preparing machine
 install k3s (one-line-installation)
 enable ssh
 install open-scsi
