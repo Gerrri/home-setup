@@ -1,9 +1,10 @@
 Thats my collection of home-services I´m hosting on a mini-pc running a K3s Kubernetes Cluster (one Node) 
 
 # Preparing machine
-install k3s (one-line-installation)
-enable ssh
-install open-scsi
+- install k3s (one-line-installation)
+- enable ssh
+- install open-scsi (for Longhorn)
+
 
 # Cluster Infrastructure
 ### Longhorn (https://github.com/longhorn/longhorn/tree/master/chart)
