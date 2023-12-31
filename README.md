@@ -6,7 +6,7 @@ enable ssh
 install open-scsi
 
 # Cluster Infrastructure
-## Longhorn (https://github.com/longhorn/longhorn/tree/master/chart)
+### Longhorn (https://github.com/longhorn/longhorn/tree/master/chart)
 helm repo add longhorn https://charts.longhorn.io
 helm repo update
 
