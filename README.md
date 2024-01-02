@@ -21,6 +21,6 @@ Thats my collection of home-services I'm hosting on a mini-pc running a K3s Kube
 ```
 helm repo add longhorn https://charts.longhorn.io
 helm repo update
-helm install longhorn/longhorn --name longhorn --namespace longhorn-system
+helm install longhorn longhorn/longhorn --namespace longhorn-system --set defaultSettings.defaultReplicaCount=1
 ```
 ATTENTION!: Dont delete the Namespace in case you want to delete Longhorn -> there is an uninstall script.
