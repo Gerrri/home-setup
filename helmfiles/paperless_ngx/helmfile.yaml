@@ -13,9 +13,4 @@ releases:
                 paths:
                   - path: /paperless
                     pathType: Prefix
-      - persistence:
-          export:
-            enabled: false
-          consume:
-            enabled: false
 

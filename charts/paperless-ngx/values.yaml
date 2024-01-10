@@ -65,22 +65,47 @@ persistence:
     size: 8Gi
   # -- Configure export volume settings for the chart under this key.
   # @default -- See [values.yaml](./values.yaml)
+  # export:
+  #   enabled: true
+  #   retain: true
+  #   mountPath: /usr/src/paperless/export
+  #   subPath: export
+  #   readOnly: false
+  #   storageClass: smb
+  #   accessMode: ReadWriteMany
+  #   size: 10Gi
   export:
-    enabled: true
+    enabled: false
     retain: true
     mountPath: /usr/src/paperless/export
-    # storageClass: ""
-    # accessMode: ReadWriteOnce
-    # size: 1Gi
+    subPath: export
+    storageClass: smb
+    accessMode: ReadWriteMany
+    size: 10Gi
+    existingClaim: pvc-gandalf-paperless-export
+
   # -- Configure consume volume settings for the chart under this key.
   # @default -- See [values.yaml](./values.yaml)
+  # consume:
+  #   name: smb
+  #   enabled: true
+  #   retain: true
+  #   mountPath: /usr/src/paperless/consume
+  #   subPath: consume
+  #   readOnly: false
+  #   storageClass: smb
+  #   accessMode: ReadWriteMany
+  #   size: 4Gi  
+    
   consume:
     enabled: true
     retain: true
     mountPath: /usr/src/paperless/consume
-    # storageClass: ""
-    # accessMode: ReadWriteOnce
-    # size: 4Gi
+    subPath: consume
+    storageClass: smb
+    accessMode: ReadWriteMany
+    size: 4Gi
+    existingClaim: pvc-gandalf-paperless-consume
 
 # -- Enable and configure postgresql database subchart under this key.
 #    If enabled, the app's db envs will be set for you.

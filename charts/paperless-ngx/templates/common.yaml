@@ -1,6 +1,8 @@
 {{/* Append the hardcoded settings */}}
 {{- define "healthchecks.harcodedValues" -}}
 env:
+  PAPERLESS_CONSUMPTION_DIR: /usr/src/paperless/consume
+  PAPERLESS_EXPORT_DIR: /usr/src/paperless/export
   PAPERLESS_TIME_ZONE: {{ .Values.env.TZ }}
   PAPERLESS_PORT: {{ quote .Values.service.main.ports.http.port }}
 
