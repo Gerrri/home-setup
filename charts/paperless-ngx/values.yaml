@@ -63,39 +63,16 @@ persistence:
     # storageClass: ""
     accessMode: ReadWriteOnce
     size: 8Gi
-  # -- Configure export volume settings for the chart under this key.
-  # @default -- See [values.yaml](./values.yaml)
-  # export:
-  #   enabled: true
-  #   retain: true
-  #   mountPath: /usr/src/paperless/export
-  #   subPath: export
-  #   readOnly: false
-  #   storageClass: smb
-  #   accessMode: ReadWriteMany
-  #   size: 10Gi
+
   export:
-    enabled: false
+    enabled: true
     retain: true
     mountPath: /usr/src/paperless/export
     subPath: export
     storageClass: smb
     accessMode: ReadWriteMany
     size: 10Gi
-    existingClaim: pvc-gandalf-paperless-export
-
-  # -- Configure consume volume settings for the chart under this key.
-  # @default -- See [values.yaml](./values.yaml)
-  # consume:
-  #   name: smb
-  #   enabled: true
-  #   retain: true
-  #   mountPath: /usr/src/paperless/consume
-  #   subPath: consume
-  #   readOnly: false
-  #   storageClass: smb
-  #   accessMode: ReadWriteMany
-  #   size: 4Gi  
+    existingClaim: pvc-gandalf-paperless-export 
     
   consume:
     enabled: true
