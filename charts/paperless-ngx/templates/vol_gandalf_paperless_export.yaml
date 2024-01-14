@@ -21,7 +21,7 @@ spec:
     # make sure this value is unique for every share in the cluster
     volumeHandle: miniryzen_paperless_export
     volumeAttributes:
-      source: "//10.10.10.250/homeserver" # Change this to your SMB IP and share name
+      source: "//gandalf/homeserver" # Change this to your SMB IP and share name
     nodeStageSecretRef:
       name: smbcreds
       namespace: home-services
