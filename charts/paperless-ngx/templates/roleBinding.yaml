@@ -1,0 +1,13 @@
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: paperless-export-roleBinding
+  namespace: home-services
+subjects:
+- kind: ServiceAccount
+  name: sa-paperless-export-cron
+  namespace: home-services
+roleRef:
+  kind: Role
+  name: paperless-export-role
+  apiGroup: ""

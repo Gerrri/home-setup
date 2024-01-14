@@ -8,7 +8,6 @@ Thats my collection of home-services I'm hosting on a mini-pc running a K3s Kube
 - Home-Assistant (currently running on a Raspberry Pi)
 
 ## My todos
-- Longhorn degraded volumes error
 - Longhorn Backups
 
 # Preparing machine
@@ -51,3 +50,20 @@ kubectl create -f https://raw.githubusercontent.com/kubernetes-csi/csi-driver-sm
 
 ```
 
+
+# Modifications for paperless document export
+
+Command to perform an export in paperless container
+```
+mkdir -p /usr/src/paperless/media tmp_export && 
+chown -c paperless /usr/src/paperless/media tmp_export &&
+document_exporter /usr/src/paperless/media/tmp_export && 
+cp /usr/src/paperless/media/tmp_export/* /usr/src/paperless/export
+```
+Command to run this via kubcetl
+```
+kubectl exec $(kubectl get pods --namespace home-services | grep "paperless-ngx" | grep -v "redis" | awk {'print $1}') -n home-services -- bash -c "mkdir -p /usr/src/paperless/media tmp_export && \
+        chown -c paperless /usr/src/paperless/media tmp_export && \
+        document_exporter /usr/src/paperless/media/tmp_export && \
+        cp /usr/src/paperless/media/tmp_export/* /usr/src/paperless/export"
+```

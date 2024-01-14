@@ -13,6 +13,9 @@ image:
   # -- Image tag
   tag: 2.1.3
 
+controllers.main.containers.main.command: ["/bin/sh", "-c"]
+controllers.main.containers.main.args: ['echo "hello world!']
+
 # -- Environment variables [[ref]](https://docs.paperless-ngx.com/configuration/)
 # @default -- See [values.yaml](./values.yaml)
 env:
