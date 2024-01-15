@@ -64,6 +64,6 @@ Command to run this via kubcetl
 ```
 kubectl exec $(kubectl get pods --namespace home-services | grep "paperless-ngx" | grep -v "redis" | awk {'print $1}') -n home-services -- bash -c "mkdir -p /usr/src/paperless/media tmp_export && \
         chown -c paperless /usr/src/paperless/media tmp_export && \
-        document_exporter /usr/src/paperless/media/tmp_export && \
+        document_exporter -c /usr/src/paperless/media/tmp_export && \
         cp /usr/src/paperless/media/tmp_export/* /usr/src/paperless/export"
 ```
