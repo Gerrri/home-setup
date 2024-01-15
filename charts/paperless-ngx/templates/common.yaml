@@ -10,6 +10,8 @@ env:
   PAPERLESS_FORCE_SCRIPT_NAME: /paperless #Todo move to helmfile and create PR 
   PAPERLESS_ADMIN_USER: admin
   PAPERLESS_ADMIN_PASSWORD: password
+  PAPERLESS_CONSUMER_POLLING: 60
+  PAPERLESS_OCR_USER_ARGS: '{"invalidate_digital_signatures": true}'
 
   {{- with .Values.ingress.main }}
   {{- if and .enabled .hosts }}
