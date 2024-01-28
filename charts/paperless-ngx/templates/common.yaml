@@ -7,7 +7,7 @@ env:
   PAPERLESS_PORT: {{ quote .Values.service.main.ports.http.port }}
 
   #my stuff
-  PAPERLESS_FORCE_SCRIPT_NAME: /paperless #Todo move to helmfile and create PR 
+  PAPERLESS_FORCE_SCRIPT_NAME: /paperless
   PAPERLESS_ADMIN_USER: admin
   PAPERLESS_ADMIN_PASSWORD: password
   PAPERLESS_CONSUMER_POLLING: 60
