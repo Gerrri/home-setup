@@ -1,0 +1,27 @@
+releases:
+  - name: wordpress-wedding
+    namespace: "public-services"
+    chart: oci://registry-1.docker.io/bitnamicharts/wordpress
+    version: 20.1.2
+    values:
+      - wordpressUsername: admin
+      - wordpressPassword: "admin"
+      - ingress:
+          enabled: true
+          pathType: Prefix
+          path: /
+          annotations:
+            kubernetes.io/ingress.class: traefik
+          hostname: miniryzen
+        # multisite:
+        #   enable: true
+        #   host: "miniryzen/wedding"
+        #   networkType: subfolder
+        # wordpressExtraConfigContent: |
+        #   define('WP_SITEURL', 'http://' . $_SERVER['HTTP_HOST'] . '/wedding/')
+        #   define('WP_HOME', 'http://' . $_SERVER['HTTP_HOST'] . '/wedding/')
+        #   define('WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/wedding/wp-content/');
+        # lifecycleHooks:
+        #   postStart:
+        #     exec:
+        #       command: ["/bin/sh", "-c", "ln -s /opt/bitnami/wordpress /opt/bitnami/wordpress/wedding"]
